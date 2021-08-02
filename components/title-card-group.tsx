@@ -3,6 +3,10 @@ import { TitleCard } from "./title-card";
 
 export interface TitleCardData {
   title: string;
+  alt: string;
+  url: string;
+  width: number;
+  height: number;
 }
 
 export interface TitleCardGroupProps {
@@ -14,7 +18,16 @@ export const TitleCardGroup: FC<TitleCardGroupProps> = ({
   title,
   items = [],
 }) => {
-  const Cards = items.map(({ title }) => <TitleCard title={title} />);
+  const Cards = items.map(({ title, alt, url, width, height }) => (
+    <TitleCard
+      key={title}
+      title={title}
+      alt={alt}
+      url={url}
+      width={width}
+      height={height}
+    />
+  ));
 
   return (
     <div>
