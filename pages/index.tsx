@@ -10,12 +10,12 @@ const Home = ({ recipes }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const items = recipes;
 
   return (
-    <div className="bg-red-400 flex-auto">
+    <div className="flex-auto">
       <Head>
         <title>Oh My Heart and Home</title>
       </Head>
 
-      <TitleCardGroup title="Sample Card Group" items={items} />
+      <TitleCardGroup title="Breakfast" items={items} />
     </div>
   );
 };

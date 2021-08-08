@@ -30,9 +30,11 @@ export const TitleCardGroup: FC<TitleCardGroupProps> = ({
   ));
 
   return (
-    <div>
-      <header>{title}</header>
-      <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 mx-2 lg:grid-cols-4">
+    <div className="flex flex-col gap-2">
+      <header className="bg-gray-200 text-center font-header text-2xl">
+        {title}
+      </header>
+      <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 mx-2 lg:grid-cols-4">
         {Cards}
       </div>
     </div>

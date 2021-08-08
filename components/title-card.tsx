@@ -1,6 +1,10 @@
 import { FC } from "react";
 import Image from "next/image";
+import getConfig from "next/config";
 import classNames from "classnames";
+
+const { publicRuntimeConfig } = getConfig();
+const sizes = publicRuntimeConfig.thumbnailSizes;
 
 export interface TitleCardProps {
   title: string;
@@ -18,7 +22,7 @@ export const TitleCard: FC<TitleCardProps> = ({
   width,
 }) => {
   return (
-    <div className="bg-gray-300 flex flex-col">
+    <div className=" flex flex-col overflow-hidden">
       <div className="flex-auto flex flex-col justify-center">
         <Image
           className=""
@@ -26,10 +30,12 @@ export const TitleCard: FC<TitleCardProps> = ({
           alt={alt}
           height={height}
           width={width}
+          sizes={sizes}
+          quality={10}
           layout="responsive"
         />
       </div>
-      <div className="self-center">{title}</div>
+      <div className="text-center m-1 font-body text-base">{title}</div>
     </div>
   );
 };
